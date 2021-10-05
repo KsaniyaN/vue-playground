@@ -1,0 +1,68 @@
+* {
+    outline: none;
+}
+
+.list-item {
+    background-color: #aeffe4;
+    border-radius: 5px;
+    display: flex;
+    height: 24px;
+    padding: 1em;
+}
+
+.checkbox input[type="checkbox"] {
+    font-size: 1em;
+    visibility: hidden;
+}
+
+.checkbox input[type="checkbox"]+span.checkbox-custom {
+    color: #555;
+    position: relative;
+    top: -1.25em;
+} 
+
+.list-item .checkbox {
+    width: 32px;
+}
+
+.list-item .checkbox, .list-item .title {
+    display: inline-block;
+}
+
+.list-item .title {
+    margin-right: .5em;
+    width: 92%;
+}
+
+.list-item input[type=text] {
+    border: none;
+    border-radius: 5px;
+    color: #636363;
+    padding: 4px 8px;
+    width: 97%;
+}
+
+.list-item .actions a {
+    color: #c7c7c7;
+    display: inline-block;
+    height: 18px;
+    text-align: center;
+    vertical-align: top;
+    width: auto;
+}
+
+.list-item .actions [class^="icon-"] {
+    color: #b3b3b3;
+    height: 18px;
+    text-align: center;
+    width: auto;
+}
+
+.list-item.TASK_ARCHIVED input[type=text],
+.list-item.TASK_ARCHIVED .checkbox input[type="checkbox"]+span.checkbox-custom {
+    color: #b1b1b1;
+}
+
+.list-item.TASK_PINNED .icon-star {
+    color: #19b5c4;
+}

@@ -18,7 +18,7 @@ const count = ref(0)
 </script>
 
 <style scoped>
-h1 {
+h1, div {
     margin-bottom: 1em;
 }
 </style>

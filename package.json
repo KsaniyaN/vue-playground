@@ -5,6 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
+    "test": "jest src",
     "storybook": "start-storybook -p 8081",
     "build-storybook": "build-storybook"
   },
@@ -22,6 +23,7 @@
     "@storybook/vue3": "^6.3.8",
     "@vitejs/plugin-vue": "^1.6.1",
     "@vue/compiler-sfc": "^3.2.6",
+    "@vue/test-utils": "^2.0.0-rc.15",
     "babel-loader": "^8.2.2",
     "vite": "^2.5.4",
     "vue-loader": "^16.6.0"

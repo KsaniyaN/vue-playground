@@ -3,7 +3,7 @@ module.exports = {
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-knobs",
+    "@storybook/addon-knobs",   /* Knobs are already deprecated in favour of Controls */
     '@storybook/addon-actions',
   ]
 }

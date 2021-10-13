@@ -45,17 +45,3 @@ export const disabled = () => ({
     },
     template: `<Button :isDisabled="isDisabled">{{ text }}</Button>`,
 });
-
-
-export const secondary = () => ({
-    components: { Button },
-    props: {
-        isDisabled: {
-            default: boolean('Disabled', false),
-        },
-        text: {
-            default: text('Label', 'Secondary'),
-        },
-    },
-    template: `<Button :isDisabled="isDisabled">{{ text }}</Button>`,
-});

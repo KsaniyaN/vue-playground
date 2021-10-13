@@ -1,6 +1,6 @@
 {
   "name": "vue-playground",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +10,6 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
     "vue": "^3.2.6",
     "vue-tabler-icons": "^2.1.0"
   },

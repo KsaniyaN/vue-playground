@@ -1,10 +1,12 @@
 <template>
     <Nav />
     <TodoApp />
+    <Parent />
 </template>
 
 <script>
 import Nav from "./components/Nav.vue";
+import Parent from "./components/Parent.vue";
 import TodoApp from './components/TodoApp.vue';
 
 export default {
@@ -12,6 +14,7 @@ export default {
     components: {
         Nav,
         TodoApp,
+        Parent
     }
 }
 </script>

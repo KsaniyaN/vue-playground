@@ -6,8 +6,14 @@ import TodoApp from '../../TodoApp.vue';
 
 describe("TodoApp.vue", () => {
 
-    const wrapper = mount(TodoApp);
-    const todo = wrapper.get('[data-test="todo"]');
+    // beforeEach hook to reduce redundancy of code
+    let wrapper;
+    let todo;
+
+    beforeEach(() => {
+        wrapper = mount(TodoApp);
+        todo = wrapper.get('[data-test="todo"]');
+    })
 
     it("should render todo text", () => {
         expect(todo.text()).toBe("Learn Vue.js 3")

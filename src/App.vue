@@ -1,13 +1,20 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue';
-import TodoApp from './components/TodoApp.vue';
-</script>
-
 <template>
-    <!-- <HelloWorld msg="Hi Xenia!" /> -->
-
+    <Nav />
     <TodoApp />
 </template>
+
+<script>
+import Nav from "./components/Nav.vue";
+import TodoApp from './components/TodoApp.vue';
+
+export default {
+    name: "App",
+    components: {
+        Nav,
+        TodoApp,
+    }
+}
+</script>
 
 <style>
 #app {

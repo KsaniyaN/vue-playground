@@ -7,18 +7,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+    import { ref } from 'vue'
 
-defineProps({
-    msg: String
-})
+    defineProps({
+        msg: String
+    })
 
-const count = ref(0)
-
+    const count = ref(0)
 </script>
 
 <style scoped>
-h1, div {
-    margin-bottom: 1em;
-}
+    h1, div {
+        margin-bottom: 1em;
+    }
 </style>

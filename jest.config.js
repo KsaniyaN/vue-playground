@@ -1,11 +1,7 @@
 module.exports = {
-  moduleFileExtensions: ['vue', 'js', 'json', 'jsx'],
-  testEnvironment: 'jsdom',
-  transform: {
-    '^.+\\.vue$': 'vue3-jest',
-    '^.+\\js$': 'babel-jest',
-  },
-//   "transformIgnorePatterns": [
-//     "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
-//   ]
-}
+    moduleFileExtensions: ['js', 'jsx', 'json', 'vue'],
+    transform: {
+        ".*\\.(vue)$": "vue-jest",
+        "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
+};

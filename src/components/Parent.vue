@@ -1,17 +1,34 @@
 <template>
     <div>
-        Parent
-        <Child />
+        <!-- Parent
+        <Child /> -->
+        <p>------------------------------------------------------------------</p>
+        <button @click="getDate">Show Date</button>
+        <p>{{ message }}</p>
     </div>
 </template>
 
 <script>
-    import Child from "./Child.vue";
 
-    export default {
-        name: "Parent",
-        components: {
-            Child
-        }
-    };
+import Child from "./Child.vue";
+
+export default {
+    name: "Parent",
+
+    components: {
+        Child,
+    },
+
+    data() {
+        return {
+            message: null,
+        };
+    },
+
+    methods: {
+        getDate() {
+            this.message = Date();
+        },
+    },
+};
 </script>

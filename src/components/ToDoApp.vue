@@ -1,16 +1,23 @@
 <template>
     <div>
         <h1>Hi, lets Learn Vue.js 3</h1>
-        <div 
-            v-for="todo in todos" 
-            :key="todo.id" 
+        <h2>ToDo List</h2>
+        <div
+            v-for="todo in todos"
+            :key="todo.id"
             data-test="todo"
-            :class="[todo.completed ? 'completed' : '']">
-                {{ todo.text }}
-                <input type="checkbox" v-model="todo.completed" data-test="todo-checkbox" />
+            :class="[todo.completed ? 'completed' : '']"
+        >
+            {{ todo.text }}
+            <input
+                type="checkbox"
+                v-model="todo.completed"
+                data-test="todo-checkbox"
+            />
         </div>
 
         <form data-test="form" @submit.prevent="createTodo">
+            <label>New ToDo:</label>
             <input data-test="new-todo" v-model="newTodo" />
         </form>
     </div>
@@ -18,7 +25,7 @@
 
 <script>
 export default {
-    name: 'TodoApp',
+    name: "TodoApp",
 
     data() {
         return {
@@ -26,33 +33,37 @@ export default {
             todos: [
                 {
                     id: 1,
-                    text: 'Learn Vue.js 3',
-                    completed: false
+                    text: "Learn Vue.js 3",
+                    completed: false,
                 },
                 {
                     id: 2,
-                    text: 'Visit India',
-                    completed: false
-                }
-            ]
-        }
+                    text: "Visit India",
+                    completed: false,
+                },
+            ],
+        };
     },
 
     methods: {
-       createTodo(){
-           this.todos.push({
+        createTodo() {
+            this.todos.push({
                 id: 3,
                 text: this.newTodo,
                 completed: false,
-           })
-       } 
-    }
-
-}
+            });
+            this.newTodo = "";
+        },
+    },
+};
 </script>
 
 <style scoped>
-    .completed {
-        text-decoration: line-through;
-    }
+.completed {
+    text-decoration: line-through;
+}
+
+form label {
+    margin-right: 0.75em;
+}
 </style>

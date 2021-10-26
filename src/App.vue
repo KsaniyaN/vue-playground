@@ -1,5 +1,5 @@
 <template>
-    <Nav />
+    <!-- <Nav /> -->
     <TodoApp />
     <Parent />
 </template>
@@ -21,11 +21,13 @@ export default {
 
 <style>
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+}
+
+* {
+    margin-bottom: 1em;
 }
 </style>

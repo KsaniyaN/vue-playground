@@ -2,22 +2,15 @@
     <div>
         <h1>Hi, lets Learn Vue.js 3</h1>
         <h2>ToDo List</h2>
-        <div
-            v-for="todo in todos"
-            :key="todo.id"
-            data-test="todo"
-            :class="[todo.completed ? 'completed' : '']"
-        >
+        <div v-for="todo in todos" :key="todo.id" 
+            :class="[todo.completed ? 'completed' : '']" 
+            data-test="todo">
             {{ todo.text }}
-            <input
-                type="checkbox"
-                v-model="todo.completed"
-                data-test="todo-checkbox"
-            />
+            <input type="checkbox" v-model="todo.completed" data-test="todo-checkbox" />
         </div>
 
         <form data-test="form" @submit.prevent="createTodo">
-            <label>New ToDo:</label>
+            <label>New ToDo: </label>
             <input data-test="new-todo" v-model="newTodo" />
         </form>
     </div>
@@ -61,9 +54,5 @@ export default {
 <style scoped>
 .completed {
     text-decoration: line-through;
-}
-
-form label {
-    margin-right: 0.75em;
 }
 </style>

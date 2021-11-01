@@ -3,6 +3,7 @@
         <!-- Parent
         <Child /> -->
         <p>------------------------------------------------------------------</p>
+        <!-- <button @click="message = Date()">Show Date</button> -->
         <button @click="getDate">Show Date</button>
         <p>{{ message }}</p>
     </div>

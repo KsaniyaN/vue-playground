@@ -1,6 +1,5 @@
-import { storiesOf } from '@storybook/vue3';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
-import Number from './Number.vue';
+import Number from './../Number.vue';
 
 export default {
     title: 'Form input',

@@ -1,4 +1,4 @@
-import HelloWorld from './HelloWorld.vue';
+import HelloWorld from './../HelloWorld.vue';
 import {storiesOf} from '@storybook/vue3';
 import {withKnobs, text} from '@storybook/addon-knobs'
 

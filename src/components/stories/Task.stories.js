@@ -2,8 +2,8 @@
  * https://storybook.js.org/tutorials/intro-to-storybook/vue/en/simple-component/
  */
 
-import Task from './Task.vue';
-import '../assets/index.css';
+import Task from './../Task.vue';
+import '../../assets/index.css';
 import { action } from '@storybook/addon-actions';
 
 export default {

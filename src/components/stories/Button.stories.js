@@ -1,6 +1,5 @@
-import { storiesOf } from '@storybook/vue3';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import Button from './Button.vue';
+import Button from '../Button.vue';
 import ButtonMdx from './Button.stories.mdx';
 
 export default {

@@ -1,7 +1,6 @@
-import { storiesOf } from '@storybook/vue3';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import Button from './Button.vue';
-import ButtonGroup from './ButtonGroup.vue';
+import Button from './../Button.vue';
+import ButtonGroup from './../ButtonGroup.vue';
 
 export default {
     title: 'ButtonGroup',

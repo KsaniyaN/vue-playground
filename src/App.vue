@@ -1,10 +1,10 @@
 <template>
-  <!-- <Nav /> -->
-  <!-- <TodoApp />
+    <!-- <Nav /> -->
+    <!-- <TodoApp />
     <Parent /> -->
-  <!-- <HeroesList /> -->
-  <!-- <Computed /> -->
-  <Tree :tree-data="tree" />
+    <!-- <HeroesList /> -->
+    <!-- <Computed /> -->
+    <Tree :tree-data="tree" />
 </template>
 
 <script>
@@ -16,39 +16,44 @@ import Computed from "./components/Computed.vue";
 import Tree from "./components/Tree.vue";
 
 export default {
-  name: "App",
-  components: {
-    Nav,
-    TodoApp,
-    Parent,
-    HeroesList,
-    Computed,
-    Tree,
-  },
-  data: () => ({
-    tree: {
-      label: "Root Item",
-      children: [
-        {
-          label: "Item 1.1",
-          children: [{ label: "Item 1.1.1" }, { label: "Item 1.1.2" }],
-        },
-        { label: "Item 1.2" },
-      ],
+    name: "App",
+    components: {
+        Nav,
+        TodoApp,
+        Parent,
+        HeroesList,
+        Computed,
+        Tree,
     },
-  }),
+
+    data: () => ({
+        tree: {
+            label: "Root Item",
+            children: [
+                {
+                    label: "Item 1.1",
+                    children: [
+                        { label: "Item 1.1.1" },
+                        { label: "Item 1.1.2" },
+                    ],
+                },
+                { label: "Item 1.2" },
+            ],
+        },
+    }),
+    
 };
 </script>
 
 <style>
 #app {
-  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
 }
 
 * {
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 </style>

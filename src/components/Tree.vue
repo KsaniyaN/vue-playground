@@ -1,39 +1,28 @@
 <!-- https://www.digitalocean.com/community/tutorials/vuejs-recursive-components -->
 
 <template>
-  <div class="tree">
-    <ul class="tree-list">
-      <node-tree :node="treeData"></node-tree>
-    </ul>
-  </div>
+    <div class="tree">
+        <ul class="tree-list">
+            <tree-node :node="treeData"></tree-node>
+        </ul>
+    </div>
 </template>
 
 <script>
-import NodeTree from "./NodeTree.vue";
+import TreeNode from "./TreeNode.vue";
 
 export default {
-  props: {
-    treeData: Object,
-  },
-  components: {
-    NodeTree,
-  },
+    props: {
+        treeData: Object,
+    },
+    components: {
+        TreeNode,
+    },
 };
 </script>
 
 <style>
-/* ToDo: add less */
 .tree {
-  text-align: left;
-}
-.tree ul li {
-  list-style: none;
-}
-.tree-list ul {
-  padding-left: 16px;
-  margin-bottom: 0;
-}
-.tree-list ul li {
-  margin-bottom: 0;
+    text-align: left;
 }
 </style>

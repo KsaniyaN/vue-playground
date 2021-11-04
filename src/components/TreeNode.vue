@@ -1,8 +1,15 @@
 <!-- https://www.digitalocean.com/community/tutorials/vuejs-recursive-components -->
 
 <template>
-    <li class="tree">
-        <div class="label" @click="toggleChildren">{{ node.label }}</div>
+    <li>
+        <div class="label" @click="toggleChildren" :class="labelClasses">
+            <span
+                class="icon"
+                :class="treeNodeIcon"
+                v-if="node.children && node.children.length"
+            ></span>
+            {{ node.label }}
+        </div>
 
         <ul v-if="node.children && node.children.length && showChildren">
             <node
@@ -24,17 +31,30 @@ export default {
     data() {
         return { showChildren: false };
     },
-// ToDo: toggle classes - has-children
+
     methods: {
         toggleChildren() {
             this.showChildren = !this.showChildren;
+        },
+    },
+
+    computed: {
+        labelClasses() {
+            return { "has-children": this.node.children };
+        },
+
+        treeNodeIcon() {
+            return {
+                plus: !this.showChildren,
+                minus: this.showChildren,
+            };
         },
     },
 };
 </script>
 
 <style scoped>
-/* ToDo: Less */
+/* ToDo: Less/Sass */
 ul {
     padding-left: 16px;
     margin-bottom: 0;
@@ -43,5 +63,17 @@ ul {
 ul li {
     list-style: none;
     margin-bottom: 0;
+}
+
+.label.has-children {
+    cursor: pointer;
+}
+
+.icon.plus::before {
+    content: "+";
+}
+
+.icon.minus::before {
+    content: "-";
 }
 </style>

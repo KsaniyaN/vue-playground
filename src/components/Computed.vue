@@ -3,7 +3,7 @@
 
 <template>
     <blockquote>
-        Think of computed properties kind of like a calculator, because they
+        Think of computed properties like a calculator, because they
         calculate or compute values for us
     </blockquote>
     <div>
@@ -13,21 +13,21 @@
 </template>
 
 <script>
-export default {
-    name: "Computed",
+    export default {
+        name: "Computed",
 
-    data() {
-        return {
-            message: "Hi Xenia",
-        };
-    },
-
-    computed: {
-        reversedMessage: function () {
-            return this.message.split("").reverse().join("");
+        data() {
+            return {
+                message: "Hi Xenia",
+            };
         },
-    },
-};
+
+        computed: {
+            reversedMessage: function () {
+                return this.message.split("").reverse().join("");
+            },
+        },
+    };
 </script>
 
 <style scoped>

@@ -10,26 +10,23 @@
 </template>
 
 <script>
+    import Child from "./Child.vue";
 
-import Child from "./Child.vue";
+    export default {
+        name: "Parent",
 
-export default {
-    name: "Parent",
+        components: {Child},
 
-    components: {
-        Child,
-    },
-
-    data() {
-        return {
-            message: null,
-        };
-    },
-
-    methods: {
-        getDate() {
-            this.message = Date();
+        data() {
+            return {
+                message: null,
+            };
         },
-    },
-};
+
+        methods: {
+            getDate() {
+                this.message = Date();
+            },
+        },
+    };
 </script>

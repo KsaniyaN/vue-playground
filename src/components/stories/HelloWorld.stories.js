@@ -1,21 +1,17 @@
 import HelloWorld from './../HelloWorld.vue';
-import {storiesOf} from '@storybook/vue3';
-import {withKnobs, text} from '@storybook/addon-knobs'
 
-const stories = storiesOf('Containers', module);
+export default {
+	title: 'Hello World',
+	component: HelloWorld
+}
 
-stories.addDecorator(withKnobs);
-
-stories.add('Message with knobs', () => ({
-    components: { HelloWorld },
-    props: {
-        msg: {
-            /* 
-            * The text(label, defaultValue) method from Knobs allows you to receive 
-            * value dynamically in the Storybook Ui.
-            */
-            default: text('Text', 'Hi Xenia!')
-        }
-    },
-    template: `<HelloWorld :msg="msg"/>`
-}));
+export const helloWorld = () => ({
+	components: {HelloWorld},
+	props: {
+		message: {
+			default: "Hi Xenia! :)",
+		}
+	},
+	template: `
+        <HelloWorld :message="message"/>`
+})

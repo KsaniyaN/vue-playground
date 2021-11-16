@@ -5,12 +5,12 @@
 </template>
 
 <script>
-export default {
-    props: {
-        isDisabled: {
-            type: Boolean,
-            default: false,
+    export default {
+        props: {
+            isDisabled: {
+                type: Boolean,
+                default: false,
+            },
         },
-    },
-};
+    };
 </script>

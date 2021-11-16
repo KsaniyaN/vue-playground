@@ -9,20 +9,20 @@
 </template>
 
 <script>
-import TreeNode from "./TreeNode.vue";
+    import TreeNode from "./TreeNode.vue";
 
-export default {
-    props: {
-        treeData: Object,
-    },
-    components: {
-        TreeNode,
-    },
-};
+    export default {
+        props: {
+            treeData: Object,
+        },
+        components: {
+            TreeNode,
+        },
+    };
 </script>
 
 <style>
-.tree {
-    text-align: left;
-}
+    .tree {
+        text-align: left;
+    }
 </style>

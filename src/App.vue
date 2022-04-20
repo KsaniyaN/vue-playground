@@ -3,7 +3,7 @@
     <!-- <TodoApp />
     <Parent /> -->
     <!-- <HeroesList /> -->
-    <!-- <Computed /> -->
+    <Computed />
     <Tree :tree-data="tree"/>
 </template>
 

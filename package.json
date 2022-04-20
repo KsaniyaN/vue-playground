@@ -15,7 +15,7 @@
     "minimist": "^1.2.6",
     "node-fetch": "^3.2.3",
     "prismjs": "^1.28.0",
-    "vue": "^3.2.6",
+    "vue": "^3.2.33",
     "vue-tabler-icons": "^2.1.0"
   },
   "devDependencies": {

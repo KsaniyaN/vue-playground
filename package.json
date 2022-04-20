@@ -34,7 +34,7 @@
     "babel-loader": "^8.2.2",
     "jest": "^24.9.0",
     "typescript": "~3.9.3",
-    "vite": "^2.5.4",
+    "vite": "^2.9.5",
     "vue-jest": "^5.0.0-0",
     "vue-loader": "^17.0.0"
   }

@@ -11,6 +11,10 @@
     "test": "jest src"
   },
   "dependencies": {
+    "immer": "^9.0.12",
+    "minimist": "^1.2.6",
+    "node-fetch": "^3.2.3",
+    "prismjs": "^1.28.0",
     "vue": "^3.2.6",
     "vue-tabler-icons": "^2.1.0"
   },

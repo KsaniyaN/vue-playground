@@ -1,8 +1,12 @@
 {
   "name": "musette",
+  "type": "module",
   "version": "1.0.0",
   "description": "Dev tool to help automate the init of my git workflow",
   "main": "index.js",
+  "bin": {
+    "musette": "index.js"
+  },
   "scripts": {
     "test": "test"
   },
@@ -18,11 +22,13 @@
     "chalk": "^5.0.1",
     "clear": "^0.1.0",
     "clui": "^0.3.6",
+    "commander": "^9.2.0",
     "configstore": "^6.0.0",
     "figlet": "^1.5.2",
     "inquirer": "^8.2.3",
     "lodash": "^4.17.21",
     "minimist": "^1.2.6",
+    "node-fetch": "^3.2.3",
     "simple-git": "^3.7.1",
     "touch": "^3.1.0"
   }

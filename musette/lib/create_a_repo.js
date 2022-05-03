@@ -24,5 +24,21 @@ module.exports = {
         } catch (err) {
             throw err;
         }
+    },
+
+    createGitIgnore: async () => {
+        // getting all the .gitignore files
+        const filelist = _.without(fs.readdirSync('.'), '.git', '.gitignore');
+
+        if (filelist.length) {
+            const answers = await inquirer.askIgnoreFiles(filelist);
+            if (answers.ignore.length) {
+                fs.writeFileSync('.gitignore', answers.ignore.join('\n'))
+            } else {
+                touch('.gitignore'); // exiting the process
+            }
+        } else {
+            touch('.gitignore');
+        }
     }
 }

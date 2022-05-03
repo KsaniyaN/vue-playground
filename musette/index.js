@@ -25,7 +25,8 @@ import {createRequire} from 'module';
 
 const require = createRequire(import.meta.url);
 
-/** https://github.com/tj/commander.js#quick-start
+/**
+ * https://github.com/tj/commander.js#quick-start
  * For larger programs which may use commander in multiple ways, including unit testing, it is better to create a local Command object to use
  */
 const {Command} = require('commander');
@@ -66,6 +67,8 @@ musette
  */
 const files = require('./lib/files.js');
 const github = require('./lib/github_credentials.js');
+const inquirer = require('./lib/inquirer.js');
+const repo = require('./lib/create_a_repo.js');
 
 musette.command('octocheck')
     .description('Check user GitHub credentials')
@@ -76,6 +79,51 @@ musette.command('octocheck')
             token = await github.registerNewToken();
         }
         console.log(token);
+    });
+
+musette.command('create_repo')
+    .description('Create a new repo on Github')
+    .action(async () => {
+        const getGitHubToken = async () => {
+            let token = github.getStoredGitHubToken();
+            if (token) {
+                return token;
+            }
+
+            await setGitHubCredentials();
+
+            token = await github.registerNewToken();
+            return token;
+        }
+        try {
+            const token = await getGitHubToken();
+            github.gitHubAuth(token);
+
+            const url = await repo.createRemoteRepository();
+
+            await repo.createGitIgnore();
+
+            const complete = await repo.setupRepository(url);
+
+            if (complete) {
+                console.log(chalk.green('All done!'));
+            }
+
+        } catch (err) {
+            if (err) {
+                switch (err.status) {
+                    case 401:
+                        console.log(chalk.red(`Couldn't log you in. Please provide correct credentials or token`));
+                        break;
+                    case 422:
+                        console.log(chalk.red('There is already existing repo with the same name.'));
+                        break;
+                    default:
+                        console.log(err);
+                        break;
+                }
+            }
+        }
     })
 
 musette.parse(process.argv);

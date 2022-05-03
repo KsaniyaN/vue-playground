@@ -24,10 +24,10 @@ console.log(warning('Warning!'));
 import {createRequire} from 'module';
 
 const require = createRequire(import.meta.url);
-//
 
-// https://github.com/tj/commander.js#quick-start
-// For larger programs which may use commander in multiple ways, including unit testing, it is better to create a local Command object to use
+/** https://github.com/tj/commander.js#quick-start
+ * For larger programs which may use commander in multiple ways, including unit testing, it is better to create a local Command object to use
+ */
 const {Command} = require('commander');
 const musette = new Command();
 
@@ -59,10 +59,28 @@ musette
 //
 // musette.parse();
 
+/**
+ * ToDo:
+ * type="module" & require don't work together
+ * have to find a correct way to import files from lib
+ */
+const files = require('./lib/files.js');
+const github = require('./lib/github_credentials.js');
+
+musette.command('octocheck')
+    .description('Check user GitHub credentials')
+    .action(async () => {
+        let token = github.getStoredGitHubToken();
+        if (!token) {
+            await github.setGitHubCredentials();
+            token = await github.registerNewToken();
+        }
+        console.log(token);
+    })
+
 musette.parse(process.argv);
 
 if (!musette.args.length) {
     musette.help();
 }
 
-// const files = require("./lib/files.js");

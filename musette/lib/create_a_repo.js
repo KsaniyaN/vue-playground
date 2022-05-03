@@ -40,5 +40,20 @@ module.exports = {
         } else {
             touch('.gitignore');
         }
+    },
+
+    setupRepository: async (url) => {
+        try {
+            await git
+                .init()
+                .add('.gitignore')
+                .add('./*')
+                .commit('Initial commit')
+                .addRemote('origin', url)   // origin is a remote repository, url - address of our repo
+                .push('origin', 'master');
+            return true;
+        } catch (err) {
+            throw err;
+        }
     }
 }

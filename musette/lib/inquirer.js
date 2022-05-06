@@ -1,8 +1,8 @@
-const inquirer = require('inquirer');
-const minimist = require('minimist');   // setting defaults for the prompts
-const files = require('./files.js');
+import minimist from 'minimist';   // setting defaults for the prompts
+import files from './files.js';
 
-module.exports = {
+export default {
+
     askGitHubCredentials: () => {
         const questions = [
             {
@@ -30,13 +30,13 @@ module.exports = {
                 }
             }
         ];
-        return inquirer.prompt(questions);
+        return this.prompt(questions);
     },
 
     askRepositoryDetails: () => {
         // 0 - path to the node itself
         // 1 - path to script
-        const argv = require('minimist')(process.argv.slice(2));
+        const argv = require(minimist)(process.argv.slice(2));
         const questions = [
             {
                 type: 'input',
@@ -68,7 +68,7 @@ module.exports = {
                 default: 'public'
             }
         ];
-        return inquirer.prompt(questions);
+        return this.prompt(questions);
     },
 
     askIgnoreFiles: (filelist) => {
@@ -81,6 +81,6 @@ module.exports = {
                 default: ['node_modules']
             }
         ];
-        return inquirer.prompt(questions);
+        return this.prompt(questions);
     }
 }

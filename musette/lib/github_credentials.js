@@ -1,11 +1,23 @@
-const octokit = require('@octokit/rest');   // required to access GitHub Rest API
-const Configstore = require('configstore');
-const _ = require('lodash');    // set of general purpose utilities
+import _ from 'lodash';
 
-const pkg = require('../package.json');
-const conf = new Configstore(pkg.name);
+import {Octokit} from '@octokit/rest';   // required to access GitHub Rest API
+const octokit = new Octokit;
 
-module.exports = {
+import Configstore from 'configstore';
+//import pkg from '../package.json' assert { type: 'json' };
+//const conf = new Configstore(pkg.name);
+// tmp - following node api docs but assert doesn't work
+const conf = new Configstore(("test-pkg"));
+
+import CLI from 'clui';    // toolkit for nice looking command line
+const Spinner = CLI.Spinner;
+
+import chalk from 'chalk';
+
+import inquirer from "./inquirer.js";
+
+export default {
+
     // new instance of octokit for the user access
     getInstance: () => {
         return octokit;
@@ -25,18 +37,32 @@ module.exports = {
 
     setGitHubCredentials: async () => {
         const credentials = await inquirer.askGitHubCredentials();
-        octokit.authenticate(_.extend({
-            type: 'basic'
-        }), credentials);
+        // octokit.authenticate(_.extend({
+        //     type: 'basic'
+        // }), credentials);
+
+        const result = _.extend({
+                type: "basic"
+            },
+            credentials
+        );
+
+        global.octokit = Octokit({
+            auth: result
+        });
     },
 
     registerNewToken: async () => {
+        const status = new Spinner("Authenticating you, please wait...");
+        status.start();
+
         try {
-            const response = await octokit.oauthAuthorization.createAuthorization({
+            const response = await global.octokit.oauthAuthorizations.createAuthorization({
                 // to have more access than just read
                 scopes: ['user', 'public_repo', 'repo', 'repo:status'],
                 note: 'musette: tool for dev workflow automation with git'
             });
+
             // store a token if it is retrieved
             const token = response.data.token;
             if (token) {
@@ -48,6 +74,8 @@ module.exports = {
         } catch (err) { // to catch the entire promise if it fails
             console.log("No response");
             throw err;
+        } finally {
+            status.stop();
         }
     }
 }

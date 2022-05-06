@@ -1,11 +1,12 @@
-const _ = require('lodash');
-const fs = require('fs');
-const git = require('simple-git');  // helper for running git commands
+import _ from 'lodash';
+import fs from 'fs';
+import git from 'simple-git';  // helper for running git commands
 
-const inquirer = require('./inquirer.js');
-const gh = require('./github_credentials.js');
+import inquirer from './inquirer.js';
+import gh from './github_credentials.js';
 
-module.exports = {
+export default {
+
     createRemoteRepository: async () => {
         const github = gh.getInstance();
 

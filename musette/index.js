@@ -60,15 +60,8 @@ musette
 //
 // musette.parse();
 
-/**
- * ToDo:
- * type="module" & require don't work together
- * have to find a correct way to import files from lib
- */
-const files = require('./lib/files.js');
-const github = require('./lib/github_credentials.js');
-const inquirer = require('./lib/inquirer.js');
-const repo = require('./lib/create_a_repo.js');
+import github from './lib/github_credentials.js';
+import repo from './lib/create_a_repo.js';
 
 musette.command('octocheck')
     .description('Check user GitHub credentials')

@@ -1,7 +1,5 @@
 import _ from 'lodash';
-
 import {Octokit} from '@octokit/rest';   // required to access GitHub Rest API
-const octokit = new Octokit;
 
 import Configstore from 'configstore';
 //import pkg from '../package.json' assert { type: 'json' };
@@ -11,8 +9,6 @@ const conf = new Configstore(("test-pkg"));
 
 import CLI from 'clui';    // toolkit for nice looking command line
 const Spinner = CLI.Spinner;
-
-import chalk from 'chalk';
 
 import inquirer from "./inquirer.js";
 
@@ -25,9 +21,9 @@ export default {
 
     // creating a fn for authentication
     gitHubAuth: (token) => {
-        octokit.authenticate({
-            type: 'oauth', token: token
-        })
+        global.octokit = new Octokit({
+            auth: token
+        });
     },
 
     // store credentials
@@ -35,21 +31,18 @@ export default {
         return conf.get('github_credentials.token');
     },
 
-    setGitHubCredentials: async () => {
+    setGithubCredentials: async () => {
         const credentials = await inquirer.askGitHubCredentials();
-        // octokit.authenticate(_.extend({
-        //     type: 'basic'
-        // }), credentials);
-
-        const result = _.extend({
+        const result = _.extend(
+            {
                 type: "basic"
             },
             credentials
         );
 
-        global.octokit = Octokit({
-            auth: result
-        });
+        // global.octokit = new Octokit({
+        //     auth: result
+        // });
     },
 
     registerNewToken: async () => {

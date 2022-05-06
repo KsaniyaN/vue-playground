@@ -4,14 +4,14 @@
  */
 import chalk from 'chalk';     // Chalk: applies ANSI colors and styles
 
-console.log(chalk.blue('Hello world!'));
-console.log(chalk.bgRed('Hello Milena!'));
+// console.log(chalk.blue('Hello world!'));
+// console.log(chalk.bgRed('Hello Milena!'));
 
-const error = chalk.bold.red;
-const warning = chalk.hex('#FFA500'); // Orange color
+// const error = chalk.bold.red;
+// const warning = chalk.hex('#FFA500'); // Orange color
 
-console.log(error('Error!'));
-console.log(warning('Warning!'));
+// console.log(error('Error!'));
+// console.log(warning('Warning!'));
 
 /**
  * Commander package
@@ -67,11 +67,12 @@ musette.command('octocheck')
     .description('Check user GitHub credentials')
     .action(async () => {
         let token = github.getStoredGitHubToken();
+        // ToDo: get token
         if (!token) {
-            await github.setGitHubCredentials();
-            token = await github.registerNewToken();
+            await github.setGithubCredentials();
+            // token = await github.registerNewToken();
         }
-        console.log(token);
+        // console.log(token);
     });
 
 musette.command('create_repo')

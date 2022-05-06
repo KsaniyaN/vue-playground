@@ -9,7 +9,7 @@ const questions = [
 
 const ask = (i = 0) => {
     process.stdout.write(`\n ${questions[i]}`);
-    process.stdout.write(` > `)
+    process.stdout.write(` > `);
 };
 
 ask();

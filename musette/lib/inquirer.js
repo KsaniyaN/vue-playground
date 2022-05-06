@@ -30,7 +30,9 @@ export default {
                 }
             }
         ];
-        return this.prompt(questions);
+        // ToDo: Prompt doesn't work here for me - check octokit API
+        // return this.prompt(questions);
+        return process.stdout.write(`\n ${questions[0]}`);
     },
 
     askRepositoryDetails: () => {

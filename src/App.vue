@@ -1,9 +1,9 @@
 <template>
 <!--    <Nav/>-->
 <!--    <TodoApp/>-->
-<!--    <Parent/>-->
+    <Parent/>
 <!--    <HeroesList/>-->
-    <Computed/>
+<!--    <Computed/>-->
 <!--    <Tree :tree-data="tree"/>-->
 </template>
 

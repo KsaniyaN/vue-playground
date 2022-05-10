@@ -12,7 +12,7 @@
         <!-- Computed class -->
         <p :class="{'is-computed': isComputed}">Computed reversed message: "{{ reversedMessage }}"</p>
         <!-- Conditional class -->
-        <p :class="[isComputed ? 'is-computed' : '']">Computed reversed message: "{{ reversedMessage }}"</p>
+        <p :class="[hasError ? 'err' : '']">Computed classes error message: Smth went wrong - "{{ reversedMessage }}"</p>
     </div>
 </template>
 
@@ -24,7 +24,8 @@ export default {
         return {
             message: "Hi Xenia",
             isActive: true,
-            error: null
+            error: null,
+            err: true
         };
     },
 
@@ -35,6 +36,10 @@ export default {
 
         isComputed: function () {
             return this.isActive && !this.error
+        },
+
+        hasError: function () {
+            return this.isActive && this.err
         }
     },
 };
@@ -49,5 +54,9 @@ blockquote {
 
 .is-computed {
     color: dodgerblue;
+}
+
+.err {
+    color: indianred;
 }
 </style>

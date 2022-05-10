@@ -8,32 +8,46 @@
     </blockquote>
     <div>
         <p>Original message: "{{ message }}"</p>
-        <p>Computed reversed message: "{{ reversedMessage }}"</p>
+
+        <!-- Computed class -->
+        <p :class="{'is-computed': isComputed}">Computed reversed message: "{{ reversedMessage }}"</p>
+        <!-- Conditional class -->
+        <p :class="[isComputed ? 'is-computed' : '']">Computed reversed message: "{{ reversedMessage }}"</p>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "Computed",
+export default {
+    name: "Computed",
 
-        data() {
-            return {
-                message: "Hi Xenia",
-            };
+    data() {
+        return {
+            message: "Hi Xenia",
+            isActive: true,
+            error: null
+        };
+    },
+
+    computed: {
+        reversedMessage: function () {
+            return this.message.split("").reverse().join("");
         },
 
-        computed: {
-            reversedMessage: function () {
-                return this.message.split("").reverse().join("");
-            },
-        },
-    };
+        isComputed: function () {
+            return this.isActive && !this.error
+        }
+    },
+};
 </script>
 
 <style scoped>
-    blockquote {
-        background-color: rgb(236, 236, 236);
-        border-left: 3px lightgrey solid;
-        padding: 1em;
-    }
+blockquote {
+    background-color: rgb(236, 236, 236);
+    border-left: 3px lightgrey solid;
+    padding: 1em;
+}
+
+.is-computed {
+    color: dodgerblue;
+}
 </style>

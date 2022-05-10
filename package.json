@@ -6,7 +6,7 @@
     "build": "vite build",
     "build-storybook": "build-storybook",
     "dev": "vite --port=3003",
-    "storybook": "start-storybook -p 8081",
+    "storybook": "start-storybook -p 3005",
     "test:unit": "vue-cli-service test:unit",
     "test": "jest src"
   },
@@ -20,12 +20,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
-    "@storybook/addon-actions": "^6.3.12",
-    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-knobs": "^6.3.1",
     "@storybook/addon-links": "^6.4.22",
-    "@storybook/vue3": "^6.3.12",
-    "@vitejs/plugin-vue": "^1.6.1",
+    "@storybook/vue3": "^6.4.22",
+    "@vitejs/plugin-vue": "^1.10.2",
     "@vue/babel-preset-app": "^4.5.13",
     "@vue/cli-plugin-unit-jest": "~5.0.4",
     "@vue/compiler-sfc": "^3.2.6",
@@ -34,7 +34,7 @@
     "babel-loader": "^8.2.2",
     "jest": "^24.9.0",
     "typescript": "~3.9.3",
-    "vite": "^2.9.5",
+    "vite": "^2.9.8",
     "vue-jest": "^5.0.0-0",
     "vue-loader": "^17.0.0"
   }

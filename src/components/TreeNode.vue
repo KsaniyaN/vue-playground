@@ -12,68 +12,66 @@
         </div>
 
         <ul v-if="node.children && node.children.length && showChildren">
-            <node
-                v-for="child in node.children"
-                :node="child"
-                :key="child.id"
-            ></node>
+            <node v-for="child in node.children"
+                  :node="child"
+                  :key="child.id"></node>
         </ul>
     </li>
 </template>
 
 <script>
-    export default {
-        name: "node",
-        props: {
-            node: Object,
+export default {
+    name: "node",
+    props: {
+        node: Object,
+    },
+
+    data() {
+        return {showChildren: false};
+    },
+
+    methods: {
+        toggleChildren() {
+            this.showChildren = !this.showChildren;
+        },
+    },
+
+    computed: {
+        labelClasses() {
+            return {"has-children": this.node.children};
         },
 
-        data() {
-            return {showChildren: false};
+        treeNodeIcon() {
+            return {
+                plus: !this.showChildren,
+                minus: this.showChildren,
+            };
         },
-
-        methods: {
-            toggleChildren() {
-                this.showChildren = !this.showChildren;
-            },
-        },
-
-        computed: {
-            labelClasses() {
-                return {"has-children": this.node.children};
-            },
-
-            treeNodeIcon() {
-                return {
-                    plus: !this.showChildren,
-                    minus: this.showChildren,
-                };
-            },
-        },
-    };
+    },
+};
 </script>
 
 <style scoped>
-    /* ToDo: Less/Sass */
-    ul {
-        padding-left: 16px;
-        margin-bottom: 0;
-    }
+/* ToDo: Less/Sass */
+ul {
+    padding-left: 16px;
+    margin-bottom: 0;
+}
 
-    ul li {
-        list-style: none;
-        margin-bottom: 0;
-    }
+ul li {
+    list-style: none;
+    margin-bottom: 0;
+}
 
-    .label.has-children {
-        cursor: pointer;
-    }
+.label.has-children {
+    cursor: pointer;
+}
 
-    .icon.plus::before {
-        content: "+";
-    }
+.icon.plus::before {
+    content: "+";
+}
 
-    .icon.minus::before {
-        content: "-";
-    }
+.icon.minus::before {
+    content: "-";
+}
 </style>

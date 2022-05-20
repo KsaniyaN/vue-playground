@@ -19,7 +19,7 @@
     "vue-tabler-icons": "^2.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
+    "@babel/core": "^7.18.0",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-knobs": "^6.3.1",

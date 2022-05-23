@@ -1,10 +1,11 @@
 <template>
 <!--    <Nav/>-->
 <!--    <TodoApp/>-->
-    <Parent/>
+<!--    <Parent/>-->
 <!--    <HeroesList/>-->
 <!--    <Computed/>-->
 <!--    <Tree :tree-data="tree"/>-->
+    <SimpleWebworker/>
 </template>
 
 <script>
@@ -14,11 +15,13 @@ import Parent from "./components/Parent.vue";
 import HeroesList from "./components/HeroesList.vue";
 import Computed from "./components/Computed.vue";
 import Tree from "./components/Tree.vue";
+import SimpleWebworker from "../simple-webworker/SimpleWebworker.vue";
 
 export default {
     name: "MyApp",
 
     components: {
+        SimpleWebworker,
         Nav, TodoApp, Parent, HeroesList, Computed, Tree,
     },
 

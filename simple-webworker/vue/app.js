@@ -9,7 +9,7 @@ const App = {
     /**
      * call the getImage method the first time,
      * then set up an onmessage listener on our worker object to listen to updates from the worker thread,
-     * we check if the counter value sent by the worker is divisible by 10,
+     * we check if the counter value sent by the worker is divisible by 4,
      * if it is, we call the getImage method again
      */
     mounted() {

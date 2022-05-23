@@ -1,23 +1,27 @@
 body {
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    height: 100vh;
+    margin: 0;
 }
+
 #app {
     text-align: center;
     display: flex;
     flex-direction: column;
 }
+
 p {
-    font-size: 5rem;
+    font-size: 5em;
     color: #FFF;
 }
-.dog-image {
-    width: 100%;
-    height: 300px;
-    max-height: 300px;
-    margin: 0 auto;
+
+.loaded-image {
+    margin: 1em auto 0;
 }
+
 img {
-    object-fit: contain;
+    width: auto;
+    max-height: 300px;
     border-radius: 10px;
 }

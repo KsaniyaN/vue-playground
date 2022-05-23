@@ -1,41 +1,46 @@
 const App = {
     data() {
         return {
-            dogImage: null,
+            loadedImage: null,
             counter: 0
         }
     },
 
     /**
-     * call the getDogImage method the first time,
+     * call the getImage method the first time,
      * then set up an onmessage listener on our worker object to listen to updates from the worker thread,
      * we check if the counter value sent by the worker is divisible by 10,
-     * if it is, we call the getDogImage method again
+     * if it is, we call the getImage method again
      */
     mounted() {
         if (window.Worker) {
             const worker = new Worker('worker.js');
             worker.postMessage('');
 
-            this.getDogImage();
+            this.getImage();
 
             worker.onmessage = (e) => {
                 this.counter = e.data;
-                if (this.counter % 10 === 0) {
-                    this.getDogImage();
+                if (this.counter % 4 === 0) {
+                    this.getImage();
                 }
             }
         }
     },
 
     methods: {
-        getDogImage() {
-            fetch('https://dog.ceo/api/breeds/image/random')
+        getImage() {
+            fetch('https://api.imgflip.com/get_memes')
                 .then((response) => response.json())
                 .then((data) => {
-                    this.dogImage = data.message;
+                    let result = data.data.memes[this.getRandomInt(100)].url;
+                    this.loadedImage = result;
                 })
                 .catch(e => console.log(e))
+        },
+
+        getRandomInt(max) {
+            return Math.floor(Math.random() * max);
         }
     }
 }

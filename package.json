@@ -2,6 +2,7 @@
   "name": "vue-playground",
   "version": "0.0.1",
   "scripts": {
+    "clean": "npx -y rimraf node_modules **/node_modules/ package-lock.json",
     "serve": "vite preview",
     "build": "vite build",
     "build-storybook": "build-storybook",
@@ -16,7 +17,8 @@
     "node-fetch": "^3.2.3",
     "prismjs": "^1.28.0",
     "vue": "^3.2.33",
-    "vue-tabler-icons": "^2.1.0"
+    "vue-tabler-icons": "^2.1.0",
+    "worker-loader": "^3.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",

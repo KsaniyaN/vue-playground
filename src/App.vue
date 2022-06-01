@@ -5,7 +5,8 @@
 <!--    <HeroesList/>-->
 <!--    <Computed/>-->
 <!--    <Tree :tree-data="tree"/>-->
-    <SimpleWebworker/>
+<!--    <SimpleWebworker/>-->
+    <ComlinkWebworker/>
 </template>
 
 <script>
@@ -15,12 +16,15 @@ import Parent from "./components/Parent.vue";
 import HeroesList from "./components/HeroesList.vue";
 import Computed from "./components/Computed.vue";
 import Tree from "./components/Tree.vue";
+//WebWorkers
 import SimpleWebworker from "../simple-webworker/SimpleWebworker.vue";
+import ComlinkWebworker from "../simple-webworker/comlink/ComlinkWebworker.vue";
 
 export default {
     name: "MyApp",
 
     components: {
+        ComlinkWebworker,
         SimpleWebworker,
         Nav, TodoApp, Parent, HeroesList, Computed, Tree,
     },

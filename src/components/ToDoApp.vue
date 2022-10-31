@@ -2,9 +2,7 @@
     <div>
         <h1>Hi, lets Learn Vue.js 3</h1>
         <h2>ToDo List</h2>
-        <div v-for="todo in todos" :key="todo.id" 
-            :class="[todo.completed ? 'completed' : '']" 
-            data-test="todo">
+        <div v-for="todo in todos" :key="todo.id" :class="[todo.completed ? 'completed' : '']" data-test="todo">
             {{ todo.text }}
             <input type="checkbox" v-model="todo.completed" data-test="todo-checkbox" />
         </div>

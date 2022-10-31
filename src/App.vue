@@ -1,12 +1,12 @@
 <template>
 <!--    <Nav/>-->
-<!--    <TodoApp/>-->
+    <TodoApp/>
 <!--    <Parent/>-->
 <!--    <HeroesList/>-->
 <!--    <Computed/>-->
 <!--    <Tree :tree-data="tree"/>-->
 <!--    <SimpleWebworker/>-->
-    <ComlinkWebworker/>
+<!--    <ComlinkWebworker/>-->
 </template>
 
 <script>

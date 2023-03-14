@@ -1,3 +1,6 @@
+// ----------------------------------------------------------------------------------------------------
+// using std input and std output objects
+
 // process.stdout.write("Hello ");
 // process.stdout.write("World \n\n\n");
 

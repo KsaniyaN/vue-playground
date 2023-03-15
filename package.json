@@ -5,9 +5,7 @@
     "clean": "npx -y rimraf node_modules **/node_modules/ package-lock.json",
     "serve": "vite preview",
     "build": "vite build",
-    "build-storybook": "build-storybook",
     "dev": "vite --port=3003",
-    "storybook": "start-storybook -p 3005",
     "test:unit": "vue-cli-service test:unit",
     "test": "jest src"
   },
@@ -22,11 +20,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
-    "@storybook/addon-actions": "^6.4.22",
-    "@storybook/addon-essentials": "^6.4.22",
-    "@storybook/addon-knobs": "^6.3.1",
-    "@storybook/addon-links": "^6.4.22",
-    "@storybook/vue3": "^6.4.22",
     "@vitejs/plugin-vue": "^1.10.2",
     "@vue/babel-preset-app": "^4.5.13",
     "@vue/cli-plugin-unit-jest": "~5.0.4",

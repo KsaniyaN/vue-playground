@@ -6,6 +6,9 @@ const dec = () => --count;
 const getCount = () => count;
 
 module.exports = {
+    anything: true,
+    name: "XN",
+    count,
     inc,
     dec,
     getCount

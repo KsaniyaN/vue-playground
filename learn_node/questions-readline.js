@@ -19,6 +19,5 @@ const answerEvents = collectAnswers(questions, answers => {
 answerEvents.on("complete", answers => {
     console.log("Well done! Thank you!");
     console.log(answers);
+    process.exit();
 })
-
-answerEvents.on("complete", () => process.exit());

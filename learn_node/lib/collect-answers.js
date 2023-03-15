@@ -1,5 +1,6 @@
-// readline interface for answering questions
-// reusable module
+/** readline interface for answering questions
+ * reusable module
+ */
 const readline = require("readline");
 const {EventEmitter} = require("events");
 
@@ -8,8 +9,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-// done = f => f - dummy fn, collectAnswers fn still works now without a callback
-module.exports = (questions, done = f => f) => {
+module.exports = (questions, done) => {
     const answers = [];
     const [firstQuestion] = questions;
     const emitter = new EventEmitter();
